@@ -1,0 +1,9 @@
+button,
+button:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+a{
+    text-decoration: none;
+    &:hover{text-decoration: underline;}
+}

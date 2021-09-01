@@ -1,0 +1,28 @@
+#top-sale {
+  .owl-carousel .item .product {
+    a {
+      overflow: hidden;
+    }
+    img {
+      transition: transform 0.5s ease;
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+  .owl-carousel .owl-nav {
+    button {
+      position: absolute;
+      top: 30%;
+      outline: none;
+    }
+    button.owl-prev {
+      left: 0;
+
+      span {
+        font-size: 35px;
+        color: $color-primary;
+      }
+    }
+  }
+}

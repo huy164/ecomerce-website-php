@@ -1,12 +1,15 @@
 <?php
 //require mysql connection
     require('./database/DBController.php');
-    //require product cart
+    //require product 
     require('./database/Product.php');
+    //require cart class
+    require('./database/Cart.php');
     //controller obj
     $db=new DBController();
 
     //product obj
     $product=new Product($db);
-
-    print_r($product->getData());
+    //cart obj
+    $cart=new Cart($db);
+    $cart->insertIntoCart($arr);

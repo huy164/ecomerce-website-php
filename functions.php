@@ -11,11 +11,7 @@
     //product obj
     $product=new Product($db);
 
-    $arr=array(
-        "cart_id"=>1,
-        "user_id"=>2,
-        "item_id"=>2,
-    );
+$arr=array();
     //cart obj
     $Cart=new Cart($db);
     $Cart->insertIntoCart($arr);

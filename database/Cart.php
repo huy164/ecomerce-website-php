@@ -23,7 +23,6 @@ class Cart
                 $query_string = sprintf("INSERT INTO %s(%s)values(%s)", $table, $columns, $values); //sprintf is used to write an formated string into varialbe
 
                 //execute sql query
-                print_r($query_string);
                 $result = $this->db->con->query($query_string);
                 return $result;
             }

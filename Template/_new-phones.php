@@ -1,5 +1,12 @@
 <?php
 $product_suffle = $product->getData();
+//request post method 
+// https://stackoverflow.com/questions/50705889/what-does-this-serverrequest-method-post-do/50706079
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $Cart->addToCart($_POST['item_id'], $_POST['user_id']); //$Cart is initialized in function.php
+
+}
+?>
 ?>
 <section id="new-phones">
         <div class="container">
@@ -24,9 +31,15 @@ $product_suffle = $product->getData();
                         <div class="price py-2">
                             <span><?php echo $item['item_price'] ?></span>
                         </div>
-                        <button class="btn btn-warning font-size-12">
-                            add to card
-                        </button>
+                        <form method="post">
+                                <!-- input field store value of item -->
+                                <input type="hidden" name="item_id" value="<?php echo $item['item_id']; ?>">
+                                <!-- $item doesn't contain user_id -->
+                                <input type="hidden" name="user_id" value="<?php echo 1; ?>">
+                                <button type="submit" name="top-sale-summit" class="btn btn-warning font-size-12">
+                                    add to card
+                                </button>
+                            </form>
                     </div>
                 </div>
             </div>

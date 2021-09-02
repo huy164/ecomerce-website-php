@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                 <input type="hidden" name="item_id" value="<?php echo $item['item_id']; ?>">
                                 <!-- $item doesn't contain user_id -->
                                 <input type="hidden" name="user_id" value="<?php echo 1; ?>">
-                                <button class="btn btn-warning font-size-12">
+                                <button type="submit" name="top-sale-summit" class="btn btn-warning font-size-12">
                                     add to card
                                 </button>
                             </form>

@@ -18,10 +18,8 @@ class Cart
                 //get table columns
                 $columns = implode(",", array_keys($params)); //get key of array $params
                 $values = implode(",", array_values($params)); //get values of array $params
-
                 //create sql query
                 $query_string = sprintf("INSERT INTO %s(%s)values(%s)", $table, $columns, $values); //sprintf is used to write an formated string into varialbe
-
                 //execute sql query
                 $result = $this->db->con->query($query_string);
                 return $result;
@@ -44,7 +42,7 @@ class Cart
                 //->_top-sale.php create event when click on button
 
                 //reload the page 
-                header("Location".$_SERVER['PHP_SELF']);
+                // header("Location".$_SERVER['PHP_SELF']);
             }
         }
     }

@@ -5,8 +5,9 @@ shuffle($product_suffle); //suffle an array , it is not necessary
 //request post method 
 // https://stackoverflow.com/questions/50705889/what-does-this-serverrequest-method-post-do/50706079
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    if(isset($_POST['top-sale-summit'])){
     $Cart->addToCart($_POST['item_id'], $_POST['user_id']); //$Cart is initialized in function.php
-
+    }
 }
 ?>
 <section id="top-sale">

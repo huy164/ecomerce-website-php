@@ -8,8 +8,9 @@ sort(array: $unique);
 //request post method 
 // https://stackoverflow.com/questions/50705889/what-does-this-serverrequest-method-post-do/50706079
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    if(isset($_POST['special-price-submit'])){
     $Cart->addToCart($_POST['item_id'], $_POST['user_id']); //$Cart is initialized in function.php
-
+    }
 }
 ?>
 <section id="special-price">

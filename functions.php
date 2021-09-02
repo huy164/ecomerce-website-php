@@ -17,5 +17,5 @@
         "item_id"=>2,
     );
     //cart obj
-    $cart=new Cart($db);
-    $cart->insertIntoCart($arr);
+    $Cart=new Cart($db);
+    $Cart->insertIntoCart($arr);

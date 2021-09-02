@@ -3,7 +3,6 @@ $product_suffle = $product->getData();
 $brand=array_map(function($pro){return $pro['item_brand'];},$product_suffle);
 $unique=array_unique($brand);
 sort(array: $unique);
-print_r($unique);
 ?>
 <section id="special-price">
     <div class="container">

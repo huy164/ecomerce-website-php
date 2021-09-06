@@ -46,4 +46,27 @@ class Cart
             }
         }
     }
+
+    //calculate total 
+    public function getSum($arr){
+        if(isset($arr)){
+            $sum=0;
+            foreach ($arr as $item){
+                $sum+=floatval($item[0]);
+            }
+            return sprintf("%.2f",$sum);
+        }
+    }
+
+    //delete cart
+    public function deleteCart($itemId=null,$table='product'){
+        $result=$this->db->con->query(query:"delete from {$table} where item_id=$itemId");
+        if ($result) {
+            //->_top-sale.php create event when click on button
+
+            //reload the page 
+            header("Location:".$_SERVER['PHP_SELF']);
+        }
+    }
+    
 }

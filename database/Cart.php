@@ -42,7 +42,7 @@ class Cart
                 //->_top-sale.php create event when click on button
 
                 //reload the page 
-                // header("Location".$_SERVER['PHP_SELF']);
+                header("Location:".$_SERVER['PHP_SELF']);
             }
         }
     }

@@ -40,9 +40,9 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
                                 <!-- product qty -->
                                 <div class="qty d-flex pt-2">
                                     <div class="d-flex font-rale w-25">
-                                        <button class="qty-up border bg-light" data-id="pro1"><i class="fas fa-angle-up"></i></button>
-                                        <input type="text" data-id="pro1" class="qty_input border px-2 w-100 bg-light" disabled value="1" placeholder="1">
-                                        <button data-id="pro1" class="qty-down border bg-light"><i class="fas fa-angle-down"></i></button>
+                                        <button class="qty-up border bg-light" data-id="<?php echo $item['item_id']; ?>"><i class="fas fa-angle-up"></i></button>
+                                        <input type="text" data-id="<?php echo $item['item_id']; ?>" class="qty_input border px-2 w-100 bg-light" disabled value="1" placeholder="1">
+                                        <button data-id="<?php echo $item['item_id']; ?>" class="qty-down border bg-light"><i class="fas fa-angle-down"></i></button>
                                     </div>
                                     <form method="post">
                                         <input type="hidden" value="<?php echo($item['item_id'])?>" name="item_id">

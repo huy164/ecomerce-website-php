@@ -50,41 +50,48 @@ $(document).ready(function () {
   });
 
   // blogs owl carousel
-    $("#blogs .owl-carousel").owlCarousel({
-        loop: true,
-        nav: false,
-        dots: true,
-        responsive : {
-            0: {
-                items: 1
-            },
-            600: {
-                items: 3
-            }
-        }
-    });
+  $("#blogs .owl-carousel").owlCarousel({
+    loop: true,
+    nav: false,
+    dots: true,
+    responsive: {
+      0: {
+        items: 1
+      },
+      600: {
+        items: 3
+      }
+    }
+  });
 
-    // product quantity
-//query
-let $qty_up=$(".qty .qty-up");
-let $qty_down=$(".qty .qty-down");
-//add click event
-$qty_up.click(function (e) {
-  let $input = $(`.qty_input[data-id='${$(this).data("id")}']`);
-  if ($input.val() >= 1 && $input.val() <= 9) {
+  // product quantity
+  //query
+  let $qty_up = $(".qty .qty-up");
+  let $qty_down = $(".qty .qty-down");
+  //add click event
+  $qty_up.click(function (e) {
+    //change subtotal 
+    $.ajax({
+        url: "Template/ajax.php", type : 'post', data : { itemid : $(this).data("id")}, success: function(result){
+        console.log(result);
+      }
+    })
+
+    let $input = $(`.qty_input[data-id='${$(this).data("id")}']`);
+    if ($input.val() >= 1 && $input.val() <= 9) {
       $input.val(function (i, oldval) {
-          return ++oldval;
+        return ++oldval;
       });
-  }
-});
-$qty_down.click(function (e) {
-  let $input = $(`.qty_input[data-id='${$(this).data("id")}']`);
-  if ($input.val() > 1 && $input.val() <= 10) {
+    }
+  });
+  $qty_down.click(function (e) {
+    let $input = $(`.qty_input[data-id='${$(this).data("id")}']`);
+    if ($input.val() > 1 && $input.val() <= 10) {
       $input.val(function (i, oldval) {
-          return --oldval;
+        return --oldval;
       });
-  }
-});
+    }
+  });
 
 
 });
